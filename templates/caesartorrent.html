@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js" integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Include the latest version of WebTorrent -->
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/DragDrop/0.3.0/drag-drop.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/DragDrop/0.3.0/drag-drop.js"></script>
+    <!-- Moment is used to show a human-readable remaining time -->
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='home/caesarcoinhome.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='home/imgs/CaesarAILogo.png')}}">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <link rel="stylesheet" href="{{url_for('static',filename='seed/caesardragndrop.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='seed/seedloading.css')}}">
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+        <div class="hero-copy">
+              <h1 class="hero-title mt-0">CaesarCoin Torrenting</h1>
+
+              <p class="hero-paragraph">Upload and seed your file and generate coin as a reward for </p>
+    
+                <div class="hero-cta"><a class="button button-primary" href="https://amari.dev/" target="_blank" rel="noopener noreferrer">amari.dev</a><a class="button" href="https://revisionbank.org/" target="_blank" rel="noopener noreferrer">RevisionBank</a></div>
+          
+            </div>
+            <form>
+              <label for="torrentId">Download from a magnet link: </label>
+              <input name="torrentId", placeholder="magnet:" value="main.jpeg">
+              <button type="submit">Download</button>
+            </form>
+                
+            </div>
+        </div>
+    </section>
+ 
+
+    <section style="display: flex;justify-content:center;"id="seedingresult"class="features section">
+      <div class="cfe-app"></div>
+      <div id="quotamagneturiparent"></div>
+      <div class="log"></div>
+    </section>
+
+
+    <!-- Include the latest version of WebTorrent -->
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js" integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+    <script src="{{url_for('static',filename='torrent/caesartorrent.js')}}">
+    </script>
+    <script src="{{url_for('static',filename='torrent/allquotamagneturis.js')}}" type="text/babel"></script>
+    </main>
+  </body>
+</html>

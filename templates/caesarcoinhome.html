@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CaesarCoin BlockChain</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='home/caesarcoinhome.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='home/imgs/CaesarAILogo.png')}}">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">CaesarCoin BlockChain</h1>
+                            <p style= "color:#A30000;" class="hero-paragraph">DISCLAIMER: When sending requests to these API's the server will take about 10 seconds to warm up.</p>
+
+	                        <p class="hero-paragraph">This blockchains allows you to create transactions and get your wallet balance Next I plan to write the proof of work code locally in C++ using SHA256 hashing. </p>
+                            <p style="color:#FFFFFF;font-size:16px;">The blockchain is not yet persistent and will only stay on runtime. This API also allows the user to upload and fetch torrent files to the CaesarCoin Database.</p>
+	                        <div class="hero-cta"><a class="button button-primary" href="https://amari.dev/" target="_blank" rel="noopener noreferrer">amari.dev</a><a class="button" href="https://revisionbank.org/" target="_blank" rel="noopener noreferrer">RevisionBank</a></div>
+                            <div style="margin-top:10px;" class="hero-cta"><a class="button" href="/seed" target="_blank" rel="noopener noreferrer">CaesarSeed</a><a class="button button-primary" href="/torrent" target="_blank" rel="noopener noreferrer">CaesarTorrent</a></div>
+                        </div>
+                        <div class="brand header-brand">
+                            <h1 class="m-0">
+                                <a href="#">
+                                    <img class="header-logo-image" src="{{url_for('static',filename='home/imgs/CaesarAILogo.png')}}" alt="Logo">
+                                </a>
+                            </h1>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="features section">
+                <div class="container">
+					<div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-wrap">
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caesar Mine</h4>
+                                    <p class="text-sm mb-0">TO mine a coin:</p>
+                                    <p class="text-sm mb-0">Send POST request to https://caesarcoinblockchain.onrender.com/mine_block</p>
+                                    <p class="text-sm mb-0">JSON: {"miner":"{name}"}</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caesar Transaction</h4>
+                                    <p class="text-sm mb-0">TO make a transaction to another user:</p>
+                                    <p class="text-sm mb-0">Send POST to https://caesarcoinblockchain.onrender.com/make_transaction</p>
+                                    <p class="text-sm mb-0">JSON: {"sender":"{name}","recipient":"{name}","amount":5} </p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caesar Get BlockChain</h4>
+                                    <p class="text-sm mb-0">TO fetch the blockchain:</p>
+                                    <p class="text-sm mb-0">Send GET to https://caesarcoinblockchain.onrender.com/chain</p>
+                                
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caesar Fetch Balance</h4>
+                                    <p class="text-sm mb-0">TO fetch the balance of a user:</p>
+                                    <p class="text-sm mb-0">Send POST to https://caesarcoinblockchain.onrender.com/get_balance</p> 
+                                    <p class="text-sm mb-0">JSON: {"user":"{name}"}</p>                                
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caeasar Upload Torrent File</h4>
+                                    <p class="text-sm mb-0">To upload a torrent file:</p>
+                                    <p class="text-sm mb-0">Send POST to https://caesarcoinblockchain.onrender.com/upload_torrent_file</p> 
+                                    <p class="text-sm mb-0">FormData: file with key as "torrentfile" and file as value</p>   
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Caeasar Download Torrent File</h4>
+                                    <p class="text-sm mb-0">To download a stored torrent file:</p>
+                                    <p class="text-sm mb-0">Send POST to https://caesarcoinblockchain.onrender.com/download_torrent_file</p> 
+                                    <p class="text-sm mb-0">JSON {"torrentfile":"{filename}"}</p>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+        </main>
+
+    </div>
+
+    <script src="{{url_for('static',filename='home/main.min.js')}}"></script>
+</body>
+</html>

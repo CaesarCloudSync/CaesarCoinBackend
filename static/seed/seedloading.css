@@ -1,0 +1,73 @@
+.loader_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #8B6234;
+  width: 120px;
+  height: 120px;
+
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.indeterminate-progress-bar {
+  /* Color */
+  background-color: #d1d5db;
+
+  /* Rounded border */
+  border-radius: 9999px;
+
+  /* Size */
+  height: 0.5rem;
+
+  margin-left: 400px;
+  margin-right: 400px;
+
+  position: relative;
+  
+  overflow: hidden;
+}
+
+.indeterminate-progress-bar__progress {
+  /* Color */
+  background-color: #8B6234;
+
+  /* Rounded border */
+  border-radius: 9999px;
+
+  /* Absolute position */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+
+  /* Move the bar infinitely */
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: indeterminate-progress-bar;
+}
+
+@keyframes indeterminate-progress-bar {
+  from {
+      left: -50%;
+  }
+  to {
+      left: 100%;
+  }
+}
+
